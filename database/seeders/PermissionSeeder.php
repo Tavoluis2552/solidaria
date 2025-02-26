@@ -18,5 +18,10 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'view doctors']);
         Permission::create(['name' => 'edit doctors']);
         Permission::create(['name' => 'delete doctors']);
+
+        Permission::create(['name' => 'create suppliers']);
+        Permission::create(['name' => 'view suppliers']);
+        Permission::create(['name' => 'edit suppliers']);
+        Permission::create(['name' => 'delete suppliers']);
     }
 }
