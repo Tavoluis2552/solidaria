@@ -10,10 +10,11 @@ class Supplier extends Model
     /** @use HasFactory<\Database\Factories\SupplierFactory> */
     use HasFactory;
     protected $fillable = [
-        'supplier_name',
+        'name',
         'ruc',
         'phone',
         'address',
+        'state',
     ];
 
     protected function casts()

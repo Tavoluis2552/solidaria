@@ -22,10 +22,11 @@ class UpdateSupplierRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'supplier_name' => 'required|string',
+            'name' => 'required|string',
             'ruc' => 'required|string|size:11',
             'phone' => 'required|string|size:9',
-            'address' => 'required|string',
+            'address' => 'required|string|max:150',
+            'state' => 'required|boolean',
         ];
     }
 }

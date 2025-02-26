@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('supplier_name', 255);
+            $table->string('name', 255);
             $table->string('ruc', 11)->unique();
             $table->string('phone', 9)->nullable();
             $table->string('address', 255)->nullable();
+            $table->boolean('state')->default(true)->comment('true: activo, false: inactivo');
             $table->timestamps();
         });
     }

@@ -24,9 +24,9 @@ class SupplierController extends Controller
         // autorizacion para que pueda acceder al metodo
         Gate::authorize('viewAny', Supplier::class);
         try {
-            $supplier_name = request('supplier_name');
-            $suppliers = Supplier::when($supplier_name, function ($query, $supplier_name) {
-                return $query->where('supplier_name', 'like', "%$supplier_name%");
+            $name = request('name');
+            $suppliers = Supplier::when($name, function ($query, $name) {
+                return $query->where('name', 'like', "%$name%");
             })->paginate(20);
             return response()->json([
                 self::DATA => SupplierResource::collection($suppliers),
@@ -107,28 +107,5 @@ class SupplierController extends Controller
             self::SUCCESS_MESSAGE => true,
             self::MESSAGE => 'Proveedor eliminado',
         ], 200);
-    }
-
-    public function searchSupplier(Request $request)
-    {
-        // array of filter classes to apply
-        $filters = [
-            FilterByName::class,
-            FilterByDate::class,
-            FilterByState::class,
-        ];
-        $suppliers = (new Filter())->execute($filters);
-        return response()->json([
-            self::DATA => SupplierResource::collection($suppliers),
-            self::PAGINATION => [
-                'total' => $suppliers->total(),
-                'current_page' => $suppliers->currentPage(),
-                'per_page' => $suppliers->perPage(),
-                'last_page' => $suppliers->lastPage(),
-                'from' => $suppliers->firstItem(),
-                'to' => $suppliers->lastItem(),
-            ],
-            'filters applied' => $filters,
-        ]);
     }
 }
