@@ -18,6 +18,11 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'view doctors']);
         Permission::create(['name' => 'edit doctors']);
         Permission::create(['name' => 'delete doctors']);
+        // Permissions for categories module
+        Permission::create(['name' => 'view categories']);
+        Permission::create(['name' => 'create categories']);
+        Permission::create(['name' => 'update categories']);
+        Permission::create(['name' => 'delete categories']);
         // Permissions for supplier module
         Permission::create(['name' => 'create suppliers']);
         Permission::create(['name' => 'view suppliers']);
@@ -28,6 +33,5 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'view laboratories']);
         Permission::create(['name' => 'edit laboratories']);
         Permission::create(['name' => 'delete laboratories']);
-      
     }
 }
