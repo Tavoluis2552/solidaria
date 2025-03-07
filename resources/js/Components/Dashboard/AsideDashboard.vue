@@ -128,7 +128,7 @@ const menuItems = [
         icon: "pi pi-users",
         submenu: [
             { label: "Perfil", route: "profile.show", icon: "pi pi-user" },
-            { label: "Seguridad", route: "login", icon: "pi pi-shield" },
+            { label: "Roles", route: "role.index", icon: "pi pi-shield" },
             {
                 label: "Configuración",
                 route: "profile.show",
@@ -149,6 +149,13 @@ const menuItems = [
     { label: "Notas", route: "dashboard", icon: "pi pi-pencil" },
     { label: "Trabajos", route: "profile.show", icon: "pi pi-briefcase" },
     { label: "Reportes", route: "dashboard", icon: "pi pi-chart-bar" },
+    { label: "Zonas", route: "zone.index", icon: "pi pi-map" },
+    {
+        label: "Laboratorios",
+        route: "laboratories.index",
+        icon: "pi pi-warehouse",
+    },
+    { label: "Busquedas", route: "search", icon: "pi pi-search" },
 ];
 
 // Reactive status for submenus only

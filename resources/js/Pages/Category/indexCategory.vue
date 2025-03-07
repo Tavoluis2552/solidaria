@@ -44,10 +44,10 @@
 
 <script setup lang="ts">
 import AppLayout from "@/Layouts/AppLayout.vue";
-import TableCategorys from "./Components/TableCategory.vue";
-import CreateCategory from "./Components/CreateCategory.vue";
-import DeleteCategory from "./Components/DeleteCategory.vue";
-import useCategories from "@/composables/useCategories";
+import TableCategorys from "./Components/tableCategory.vue";
+import CreateCategory from "./Components/createCategory.vue";
+import DeleteCategory from "./Components/deleteCategory.vue";
+import useCategories from "@/Composables/useCategories";
 import { useToast } from "primevue/usetoast";
 import Toast from "primevue/toast";
 const toast = useToast();
